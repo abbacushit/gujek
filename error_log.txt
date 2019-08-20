@@ -1,0 +1,2 @@
+{"data":null,"success":false,"errors":[{"code":"CO:CUST:phone_already_taken","message":"This number is already registered.","message_title":"Error","message_severity":"error"}]}
+{"data":null,"success":false,"errors":[{"code":"CO:CUST:invalid_otp","message":"Seems like this code isn\u2019t valid.","message_title":"Wrong OTP","message_severity":"error"}]}
