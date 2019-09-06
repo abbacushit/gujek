@@ -93,35 +93,38 @@ function claim($token)
 		return false;
 		}
 	}
-echo "LU MAU LOGIN APA REGIS COK?? LOGIN = 1 & REGIS = 2: ";
+echo "=====================================================\n";
+echo "####### GAK ADA GUJEK YANG AMAN BY TEMPEK MKS #######\n";
+echo "=====================================================\n";
+echo "[+] LU MAU LOGIN APA REGIS COK?? LOGIN = 1 & REGIS = 2: ";
 $type = trim(fgets(STDIN));
 if($type == 2){
-echo "It's Register Way\n";
-echo "ISI 62 KLO LU MAU DAPTAR AKUN INDOG TRUS 1 UNTUK REGIS NOMER LUAR PANTEQ\n";
-echo "ISI NO HP LO ANJING: ";
+echo "[+] MANTAP ANJING LO MILIH REGIS\n";
+echo "[+] ISI 62 KLO LU MAU DAPTAR AKUN INDOG TRUS 1 UNTUK REGIS NOMER LUAR PANTEQ\n";
+echo "[+] ISI NO HP LO ANJING: ";
 $nope = trim(fgets(STDIN));
 $register = register($nope);
 if ($register == false)
 	{
-	echo "GAGAL AMBIL OTP ASUUUUU, NOMERNYA UDAH KEREGIS, COBA GNTI YG LAEN!\n";
+	echo "[-] GAGAL AMBIL OTP ASUUUUU, NOMERNYA UDAH KEREGIS, COBA GNTI YG LAEN!\n";
 	}
   else
 	{
-	echo "MASUKIN OTP MU YA PANTEQ BKN KNTL MU: ";
+	echo "[+] MASUKIN OTP MU YA PANTEQ BKN KNTL MU: ";
 	// echo "Enter Number: ";
 	$otp = trim(fgets(STDIN));
 	$verif = verif($otp, $register);
 	if ($verif == false)
 		{
-		echo "GAGAL REGIS AKUNMU ASU GK TAU JUGA KENAPA BISA GINI!\n";
+		echo "[-] GAGAL REGIS AKUNMU ASU GK TAU JUGA KENAPA BISA GINI!\n";
 		}
 	  else
 		{
-		echo "MANTAP ANJING DAPAT POCER DARI NADIEM\n";
+		echo "[=] MANTAP ANJING DAPAT POCER DARI NADIEM\n";
 		$claim = claim($verif);
 		if ($claim == false)
 			{
-			echo "GAGAL DAPAT POCER ASU ANJING DIALAN, COBA LAGI LAH PANTEQ\n";
+			echo "[-] GAGAL DAPAT POCER ASU ANJING SIALAN, COBA LAGI LAH PANTEQ\n";
 			}
 		  else
 			{
@@ -130,32 +133,32 @@ if ($register == false)
 		}
 	}
 }else if($type == 1){
-echo "It's Login Way\n";
-echo "ISI 62 KLO LU MAU DAPTAR AKUN INDOG TRUS 1 UNTUK REGIS NOMER LUAR PANTEQ\n";
-echo "MASUKIN NOPEMU ANJING: ";
+echo "[+] MANTAP ANJING LO MILIH LOGIN\n";
+echo "[+] ISI 62 KLO LU MAU DAPTAR AKUN INDOG TRUS 1 UNTUK REGIS NOMER LUAR PANTEQ\n";
+echo "[+] MASUKIN NOPEMU ANJING: ";
 $nope = trim(fgets(STDIN));
 $login = login($nope);
 if ($login == false)
 	{
-	echo "ASU GAGAL AMBIL OTP!\n";
+	echo "[-] ASU GAGAL AMBIL OTP!\n";
 	}
   else
 	{
-	echo "MASUKIN OTP MU YA PANTEQ BKN KNTL MU: ";
+	echo "[+] MASUKIN OTP MU YA PANTEQ BKN KNTL MU: ";
 	// echo "Enter Number: ";
 	$otp = trim(fgets(STDIN));
 	$verif = veriflogin($otp, $login);
 	if ($verif == false)
 		{
-		echo "MANTAP ANJING DAPAT POCER DARI NADIEM!\n";
+		echo "[=] MANTAP ANJING DAPAT POCER DARI NADIEM!\n";
 		}
 	  else
 		{
-		echo "MANTAP ANJING DAPAT POCER DARI NADIEM\n";
+		echo "[=] MANTAP ANJING DAPAT POCER DARI NADIEM\n";
 		$claim = claim($verif);
 		if ($claim == false)
 			{
-			echo "GAGAL DAPAT POCER ASU ANJING DIALAN, COBA LAGI LAH PANTEQ\n";
+			echo "[-] GAGAL DAPAT POCER ASU ANJING SIALAN, COBA LAGI LAH PANTEQ\n";
 			}
 		  else
 			{
